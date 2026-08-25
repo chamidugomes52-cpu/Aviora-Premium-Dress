@@ -1,0 +1,293 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+
+:root {
+  --color-bg-deep: #08080a;
+  --color-bg-surface: #101015;
+  --color-bg-card: #16161e;
+  --color-accent-copper: #C86D51;
+  --color-accent-copper-light: #E07A5F;
+  --color-accent-copper-glow: rgba(200, 109, 81, 0.25);
+  --color-gold: #D4AF37;
+  --color-text-primary: #F8F7F4;
+  --color-text-muted: #A3A3B2;
+  --color-border: rgba(200, 109, 81, 0.18);
+  --color-border-subtle: rgba(255, 255, 255, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: var(--color-bg-deep);
+  color: var(--color-text-primary);
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--color-accent-copper);
+  color: #ffffff;
+}
+
+/* Custom Typography Classes */
+.font-cinzel {
+  font-family: 'Cinzel', serif;
+}
+
+.font-playfair {
+  font-family: 'Playfair Display', serif;
+}
+
+.font-cormorant {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.font-sans {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #09090c;
+}
+::-webkit-scrollbar-thumb {
+  background: #2a2528;
+  border-radius: 4px;
+  border: 1px solid rgba(200, 109, 81, 0.2);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent-copper);
+}
+
+/* Luxury Glassmorphism */
+.glass-panel {
+  background: rgba(16, 16, 21, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--color-border);
+}
+
+.glass-panel-subtle {
+  background: rgba(22, 22, 30, 0.55);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--color-border-subtle);
+}
+
+.glass-nav {
+  background: rgba(8, 8, 10, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(200, 109, 81, 0.15);
+}
+
+/* Glow & Metallic Gradients */
+.copper-gradient {
+  background: linear-gradient(135deg, #DF8A68 0%, #C86D51 50%, #A64B32 100%);
+}
+
+.copper-text-gradient {
+  background: linear-gradient(135deg, #F9DCC4 0%, #DF8A68 50%, #C86D51 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-text-gradient {
+  background: linear-gradient(135deg, #FFF1D0 0%, #D4AF37 50%, #AA820A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.copper-border-glow {
+  box-shadow: 0 0 25px rgba(200, 109, 81, 0.15), inset 0 0 15px rgba(200, 109, 81, 0.05);
+}
+
+.copper-hover-glow {
+  transition: all 0.35s ease;
+}
+
+.copper-hover-glow:hover {
+  box-shadow: 0 0 30px rgba(200, 109, 81, 0.35);
+  border-color: rgba(224, 122, 95, 0.6);
+  transform: translateY(-3px);
+}
+
+/* Floating Animations */
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(2deg);
+  }
+}
+
+@keyframes floatReverse {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(10px) rotate(-2deg);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+.animate-float {
+  animation: floatSlow 6s ease-in-out infinite;
+}
+
+.animate-float-reverse {
+  animation: floatReverse 7s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 4s ease-in-out infinite;
+}
+
+/* Butterfly Particle Canvas */
+#butterflyCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Shimmer Button Effect */
+.btn-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-shimmer::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    60deg,
+    transparent 20%,
+    rgba(255, 255, 255, 0.25) 50%,
+    transparent 80%
+  );
+  transform: rotate(30deg) translateY(-100%);
+  transition: transform 0.75s ease;
+}
+
+.btn-shimmer:hover::after {
+  transform: rotate(30deg) translateY(100%);
+}
+
+/* Image Zoom Card */
+.product-image-container {
+  overflow: hidden;
+  position: relative;
+}
+
+.product-image-container img {
+  transition: transform 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.product-image-container:hover img {
+  transform: scale(1.08);
+}
+
+/* Custom Badges */
+.badge-copper {
+  background: rgba(200, 109, 81, 0.15);
+  border: 1px solid rgba(200, 109, 81, 0.4);
+  color: #F9DCC4;
+}
+
+.badge-gold {
+  background: rgba(212, 175, 55, 0.15);
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  color: #FFF1D0;
+}
+
+/* Toast Notification Styles */
+#toast-container {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  pointer-events: none;
+}
+
+.toast {
+  pointer-events: auto;
+  min-width: 280px;
+  max-width: 420px;
+  padding: 14px 18px;
+  border-radius: 12px;
+  background: rgba(18, 18, 24, 0.95);
+  border: 1px solid rgba(200, 109, 81, 0.35);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #F8F7F4;
+  font-size: 0.925rem;
+  animation: slideInToast 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  transition: all 0.3s ease;
+}
+
+.toast.hide {
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+@keyframes slideInToast {
+  from {
+    opacity: 0;
+    transform: translateX(50px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+/* Modal Blur overlay */
+.modal-backdrop {
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(10px);
+}
+
+/* Form Styling */
+.form-input-luxury {
+  background-color: rgba(14, 14, 18, 0.8);
+  border: 1px solid rgba(200, 109, 81, 0.25);
+  color: #F8F7F4;
+  transition: all 0.25s ease;
+}
+
+.form-input-luxury:focus {
+  outline: none;
+  border-color: #DF8A68;
+  box-shadow: 0 0 15px rgba(200, 109, 81, 0.25);
+  background-color: rgba(18, 18, 24, 0.95);
+}

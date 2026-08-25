@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Story & Craftsmanship | AVIORA PREMIUM DRESS</title>
+  <meta name="description" content="Learn about the philosophy, craftsmanship, and bespoke tailoring heritage behind Aviora Premium Dress.">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              black: '#08080A',
+              surface: '#111116',
+              card: '#16161F',
+              copper: '#C86D51',
+              copperLight: '#DF8A68',
+              gold: '#D4AF37',
+              ivory: '#FDFBF7'
+            }
+          },
+          fontFamily: {
+            cinzel: ['Cinzel', 'serif'],
+            playfair: ['Playfair Display', 'serif'],
+            cormorant: ['Cormorant Garamond', 'serif'],
+            sans: ['Plus Jakarta Sans', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-[#08080A] text-[#FDFBF7] font-sans antialiased min-h-screen flex flex-col selection:bg-[#C86D51] selection:text-white">
+
+  <!-- Top Announcement Bar -->
+  <div class="bg-gradient-to-r from-[#14141c] via-[#C86D51]/30 to-[#14141c] border-b border-[#C86D51]/30 text-xs py-2 px-4 text-center tracking-widest uppercase flex items-center justify-center gap-2">
+    <span class="text-[#DF8A68]">✨</span>
+    <span>The Art of Metamorphosis — Handcrafted Silhouettes for the Modern Muse</span>
+    <span class="text-[#DF8A68]">🦋</span>
+  </div>
+
+  <!-- Navigation Header -->
+  <header class="sticky top-0 z-50 transition-all duration-300">
+    <nav class="glass-nav py-3.5 px-4 sm:px-8 border-b border-[#C86D51]/20">
+      <div class="max-w-7xl mx-auto flex items-center justify-between">
+        
+        <a href="index.html" class="flex items-center gap-3 group">
+          <img src="assets/images/logo.jpg" alt="AVIORA PREMIUM DRESS" class="h-12 w-12 sm:h-14 sm:w-14 rounded-full object-cover border border-[#C86D51]/50 group-hover:border-[#DF8A68] transition-all shadow-lg shadow-black/50" />
+          <div class="flex flex-col">
+            <span class="font-cinzel tracking-[0.25em] text-lg sm:text-xl font-bold text-white group-hover:text-[#DF8A68] transition-colors">A V I O R A</span>
+            <span class="text-[9px] tracking-[0.35em] text-[#A3A3B2] uppercase font-medium">PREMIUM DRESS</span>
+          </div>
+        </a>
+
+        <div class="hidden md:flex items-center gap-8 text-sm font-medium tracking-wider uppercase">
+          <a href="index.html" class="text-[#A3A3B2] hover:text-white transition-colors">Home</a>
+          <a href="shop.html" class="text-[#A3A3B2] hover:text-white transition-colors">Collections</a>
+          <a href="about.html" class="text-[#DF8A68] transition-colors">Our Story</a>
+          <a href="contact.html" class="text-[#A3A3B2] hover:text-white transition-colors">Concierge & Fitting</a>
+          <a href="admin.html" class="text-xs px-2.5 py-1 rounded border border-[#C86D51]/40 text-[#DF8A68] hover:bg-[#C86D51]/20 transition-all flex items-center gap-1">
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+            Manager Portal
+          </a>
+        </div>
+
+        <div class="flex items-center gap-4">
+          <button onclick="openCartDrawer()" class="relative p-2 rounded-lg bg-[#15151D] border border-[#C86D51]/30 hover:border-[#DF8A68] text-white transition-all shadow-md flex items-center gap-2 group">
+            <svg class="w-5 h-5 text-[#DF8A68]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+            <span class="hidden sm:inline text-xs font-semibold tracking-wider">BAG</span>
+            <span class="cart-count-badge hidden absolute -top-1.5 -right-1.5 bg-[#C86D51] text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center">0</span>
+          </button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ABOUT HERO BANNER -->
+  <section class="relative py-20 px-4 text-center border-b border-[#22222e] bg-mesh-pattern">
+    <div class="max-w-3xl mx-auto space-y-4">
+      <div class="inline-block w-14 h-14 rounded-full bg-[#C86D51]/20 border border-[#C86D51]/40 flex items-center justify-center text-2xl mx-auto text-[#DF8A68]">
+        🦋
+      </div>
+      <span class="text-xs uppercase tracking-[0.3em] text-[#DF8A68] font-semibold block">The Metamorphosis of Luxury</span>
+      <h1 class="font-cinzel text-4xl sm:text-5xl font-bold text-white">The Aviora Heritage</h1>
+      <p class="font-cormorant italic text-xl sm:text-2xl text-[#EAE5D9] leading-relaxed">"True luxury is not merely what is worn — it is how it makes you feel when you enter the room."</p>
+    </div>
+  </section>
+
+  <!-- MAIN STORY SECTION -->
+  <main class="flex-1 py-16 px-4 max-w-6xl mx-auto w-full space-y-20">
+    
+    <!-- Section 1: The Inspiration -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div class="space-y-5">
+        <span class="text-xs uppercase tracking-[0.25em] text-[#DF8A68] font-semibold">Genesis of Aviora</span>
+        <h2 class="font-cinzel text-3xl font-bold text-white">Born From The Pursuit of Sovereign Elegance</h2>
+        <p class="text-sm sm:text-base text-[#A3A3B2] leading-relaxed">
+          Founded with a vision to redefine occasion wear for modern women across Sri Lanka and beyond, <strong class="text-white">Aviora Premium Dress</strong> bridges the timeless artistry of haute couture draping with contemporary silhouettes.
+        </p>
+        <p class="text-sm sm:text-base text-[#A3A3B2] leading-relaxed">
+          Our signature butterfly motif symbolizes graceful metamorphosis — celebrating each woman’s poise, confidence, and radiance on her most memorable occasions.
+        </p>
+      </div>
+
+      <div class="relative">
+        <div class="rounded-3xl overflow-hidden glass-panel border border-[#C86D51]/40 shadow-2xl">
+          <img src="https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=900&q=80" alt="Aviora Silk Atelier" class="w-full h-[420px] object-cover" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 2: Three Pillars of Craftsmanship -->
+    <div>
+      <div class="text-center max-w-xl mx-auto mb-12">
+        <span class="text-xs uppercase tracking-[0.25em] text-[#DF8A68] font-semibold block mb-2">Our Standards</span>
+        <h2 class="font-cinzel text-3xl font-bold text-white">The Three Pillars of Aviora</h2>
+        <div class="w-16 h-0.5 bg-[#C86D51] mx-auto mt-4"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="glass-panel p-8 rounded-2xl border border-[#282838] hover:border-[#C86D51] transition-all space-y-4 copper-hover-glow">
+          <div class="text-3xl text-[#DF8A68]">✨</div>
+          <h3 class="font-cinzel text-lg font-bold text-white">Opulent Fabrics</h3>
+          <p class="text-xs sm:text-sm text-[#A3A3B2] leading-relaxed">
+            We exclusively source pure Mulberry silks, French Chantilly lace, double-faced Duchess satin, and Italian micro-velvets that flow like liquid over natural contours.
+          </p>
+        </div>
+
+        <div class="glass-panel p-8 rounded-2xl border border-[#282838] hover:border-[#C86D51] transition-all space-y-4 copper-hover-glow">
+          <div class="text-3xl text-[#DF8A68]">📐</div>
+          <h3 class="font-cinzel text-lg font-bold text-white">Bespoke Fit</h3>
+          <p class="text-xs sm:text-sm text-[#A3A3B2] leading-relaxed">
+            Every dress can be customized to your precise measurements — bust, waist, hips, and preferred length — with our complimentary tailoring concierge.
+          </p>
+        </div>
+
+        <div class="glass-panel p-8 rounded-2xl border border-[#282838] hover:border-[#C86D51] transition-all space-y-4 copper-hover-glow">
+          <div class="text-3xl text-[#DF8A68]">🦋</div>
+          <h3 class="font-cinzel text-lg font-bold text-white">Artisanal Finishing</h3>
+          <p class="text-xs sm:text-sm text-[#A3A3B2] leading-relaxed">
+            Hand-rolled seams, concealed boning, hand-set micro-sequins, and delicate copper accents crafted with uncompromised precision in every stitch.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 3: Founder Manifesto / Commitment -->
+    <div class="glass-panel p-8 sm:p-12 rounded-3xl border border-[#C86D51]/40 text-center space-y-6 bg-[#0c0c11]">
+      <span class="text-xs uppercase tracking-[0.3em] text-[#DF8A68] font-semibold">Atelier Commitment</span>
+      <h2 class="font-cinzel text-2xl sm:text-3xl font-bold text-white">Crafted For Unforgettable Moments</h2>
+      <p class="font-cormorant italic text-lg sm:text-xl text-[#EAE5D9] max-w-2xl mx-auto leading-relaxed">
+        "Whether it is an intimate black-tie dinner, a bridesmaid gathering, or a grand wedding entrance — our mission is to craft dresses that make you feel invincible."
+      </p>
+      
+      <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="shop.html" class="px-8 py-3.5 rounded-xl copper-gradient text-white text-xs font-semibold uppercase tracking-wider btn-shimmer shadow-xl">
+          Discover The Collection
+        </a>
+        <a href="contact.html" class="px-7 py-3.5 rounded-xl bg-[#181824] hover:bg-[#202030] border border-[#2c2c3e] text-white text-xs font-semibold uppercase tracking-wider transition-colors">
+          Book Atelier Fitting
+        </a>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- LUXURY FOOTER -->
+  <footer class="bg-[#050507] border-t border-[#22222e] pt-14 pb-8 px-4 text-sm text-[#A3A3B2] mt-auto">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between text-xs text-[#6e6e80] gap-4">
+      <div class="flex items-center gap-3">
+        <img src="assets/images/logo.jpg" alt="Aviora Logo" class="h-8 w-8 rounded-full object-cover border border-[#C86D51]/50" />
+        <span>© 2026 AVIORA PREMIUM DRESS. Handcrafted Luxury.</span>
+      </div>
+      <div class="flex items-center gap-4">
+        <a href="index.html" class="hover:text-white">Home</a>
+        <span>•</span>
+        <a href="shop.html" class="hover:text-white">Collections</a>
+        <span>•</span>
+        <a href="contact.html" class="hover:text-white">Concierge</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Slide-Over Cart Drawer -->
+  <div id="cart-drawer-overlay" onclick="closeCartDrawer()" class="hidden fixed inset-0 bg-black/80 backdrop-blur-sm z-50 transition-opacity duration-300 opacity-0"></div>
+  <div id="cart-drawer" class="fixed top-0 right-0 h-full w-full max-w-md bg-[#0F0F14] border-l border-[#C86D51]/30 z-50 shadow-2xl transform translate-x-full transition-transform duration-300 flex flex-col">
+    <div class="p-5 border-b border-[#242432] flex items-center justify-between bg-[#14141B]">
+      <h3 class="font-cinzel text-base font-bold text-white">Your Shopping Bag</h3>
+      <button onclick="closeCartDrawer()" class="text-[#A3A3B2] hover:text-white text-xl leading-none">&times;</button>
+    </div>
+    <div class="flex-1 overflow-y-auto p-5 space-y-2" id="cart-drawer-items"></div>
+    <div id="cart-drawer-empty" class="hidden flex-1 flex flex-col items-center justify-center p-8 text-center text-[#A3A3B2]">
+      <div class="text-3xl mb-2 text-[#DF8A68]">🦋</div>
+      <h4 class="text-base font-cinzel font-bold text-white">Your Bag is Empty</h4>
+    </div>
+    <div id="cart-drawer-footer" class="p-5 border-t border-[#242432] bg-[#121218] space-y-4">
+      <div class="space-y-1.5 text-xs">
+        <div class="flex justify-between text-[#A3A3B2]"><span>Total:</span><span id="cart-drawer-total" class="text-[#DF8A68] font-bold">Rs. 0.00</span></div>
+      </div>
+      <button onclick="orderViaWhatsApp()" class="w-full py-3 rounded-xl bg-[#25D366] text-black font-bold text-xs uppercase tracking-wider">Checkout via WhatsApp</button>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/js/products.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
