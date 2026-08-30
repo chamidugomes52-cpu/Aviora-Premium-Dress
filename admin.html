@@ -36,8 +36,97 @@
   <!-- Custom Styles -->
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <body class="bg-[#08080A] text-[#FDFBF7] font-sans antialiased min-h-screen flex flex-col selection:bg-[#C86D51] selection:text-white">
+<div id="admin-login" style="
+  position:fixed;
+  inset:0;
+  z-index:99999;
+  background:#08080A;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+">
+  <div style="
+    width:100%;
+    max-width:420px;
+    background:#111116;
+    border:1px solid #C86D51;
+    border-radius:20px;
+    padding:35px;
+    box-shadow:0 20px 60px rgba(0,0,0,.6);
+  ">
+    <h2 style="
+      color:#FDFBF7;
+      text-align:center;
+      margin-bottom:8px;
+      font-family:serif;
+    ">AVIORA</h2>
 
+    <p style="
+      color:#DF8A68;
+      text-align:center;
+      margin-bottom:25px;
+    ">Private Admin Login</p>
+
+    <input
+      id="admin-email"
+      type="email"
+      placeholder="Admin email"
+      style="
+        width:100%;
+        padding:13px;
+        margin-bottom:12px;
+        border-radius:10px;
+        border:1px solid #333;
+        background:#08080A;
+        color:white;
+        box-sizing:border-box;
+      "
+    >
+
+    <input
+      id="admin-password"
+      type="password"
+      placeholder="Password"
+      style="
+        width:100%;
+        padding:13px;
+        margin-bottom:15px;
+        border-radius:10px;
+        border:1px solid #333;
+        background:#08080A;
+        color:white;
+        box-sizing:border-box;
+      "
+    >
+
+    <button
+      id="admin-login-button"
+      onclick="loginToAvioraAdmin()"
+      style="
+        width:100%;
+        padding:14px;
+        border:0;
+        border-radius:10px;
+        background:#C86D51;
+        color:white;
+        font-weight:bold;
+        cursor:pointer;
+      "
+    >
+      LOGIN
+    </button>
+
+    <p id="admin-login-error" style="
+      color:#ff7777;
+      text-align:center;
+      margin-top:15px;
+      display:none;
+    "></p>
+  </div>
+</div>
   <!-- Admin Top Bar -->
   <header class="glass-nav py-4 px-4 sm:px-8 border-b border-[#C86D51]/25 sticky top-0 z-40">
     <div class="max-w-7xl mx-auto flex items-center justify-between">
@@ -313,4 +402,62 @@
     }
   </script>
 </body>
+  <script>
+const SUPABASE_URL = "https://aqthtgghcbtscbzydtvj.supabase.co";
+
+const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_DF_kwQahc8sb1l-3SAhxXA_h-vZJm79";
+
+const avioraSupabase = window.supabase.createClient(
+  SUPABASE_URL,
+  SUPABASE_PUBLISHABLE_KEY
+);
+
+async function checkAvioraAdmin() {
+  const {
+    data: { session }
+  } = await avioraSupabase.auth.getSession();
+
+  const loginScreen = document.getElementById("admin-login");
+
+  if (session) {
+    loginScreen.style.display = "none";
+  } else {
+    loginScreen.style.display = "flex";
+  }
+}
+
+async function loginToAvioraAdmin() {
+  const email = document.getElementById("admin-email").value.trim();
+  const password = document.getElementById("admin-password").value;
+
+  const errorBox = document.getElementById("admin-login-error");
+  const button = document.getElementById("admin-login-button");
+
+  errorBox.style.display = "none";
+  button.disabled = true;
+  button.textContent = "LOGGING IN...";
+
+  const { data, error } = await avioraSupabase.auth.signInWithPassword({
+    email: email,
+    password: password
+  });
+
+  if (error) {
+    errorBox.textContent = error.message;
+    errorBox.style.display = "block";
+    button.disabled = false;
+    button.textContent = "LOGIN";
+    return;
+  }
+
+  document.getElementById("admin-login").style.display = "none";
+}
+
+async function avioraAdminLogout() {
+  await avioraSupabase.auth.signOut();
+  window.location.reload();
+}
+
+document.addEventListener("DOMContentLoaded", checkAvioraAdmin);
+</script>
 </html>
